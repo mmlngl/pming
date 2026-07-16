@@ -18,7 +18,7 @@ Skills live in `.claude/skills/`. Use them from this directory only.
 
 ```bash
 cd /Users/mmgl0/Documents/pming
-claude /pm:sprint-health
+claude /pm-sprint-health
 ```
 
 ### Option 2: Global Skills (Use Anywhere)
@@ -33,7 +33,7 @@ ls ~/.claude/skills/
 ln -s /Users/mmgl0/Documents/pming/.claude/skills/* ~/.claude/skills/
 
 # 3. Now use skills from anywhere
-/pm:sprint-health
+/pm-sprint-health
 ```
 
 Or add to `.claude/config.yml`:
@@ -49,19 +49,19 @@ skills:
 
 ```bash
 # Morning: What's my task today?
-/pm:daily-standup
+/pm-daily-standup
 
 # Mid-week (Wed): Am I on track?
-/pm:mid-sprint-check
+/pm-mid-sprint-check
 
 # End of week: Full pipeline health?
-/pm:pipeline-audit
+/pm-pipeline-audit
 
 # Thursday: Is next sprint ready?
-/pm:next-sprint-ready
+/pm-next-sprint-ready
 
 # Anytime: Current sprint status?
-/pm:sprint-health
+/pm-sprint-health
 ```
 
 ## Requirements
