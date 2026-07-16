@@ -3,41 +3,53 @@ name: pm-pipeline-audit
 description: Provides full health check of all three concurrent sprints at once, showing phase, completion, blockers, and risks. Use end-of-week to see full pipeline health or when you feel behind to pinpoint where things broke.
 ---
 
-## What it does
-Scans Shortcut for all three concurrent sprints. Shows phase, completion, blockers, risks. Answers: "Is my entire pipeline healthy?"
+## Full Pipeline Audit
 
-## Usage
+End-of-week or anytime: snapshot health of all 3 concurrent sprints (N | N+1 | N+2).
+
+### Workflow
+
+1. **Identify sprint numbers** for N, N+1, N+2 (most recent active + next two)
+
+2. **For Sprint N (EXECUTE):**
+   - Fetch all stories
+   - Calculate: % done, blockers, QA rejection rate (see pm-sprint-health for methodology)
+   - Status: ON TRACK / AT RISK / BEHIND
+
+3. **For Sprint N+1 (READY):**
+   - Fetch all stories
+   - Calculate: % in "Ready" state, % with designs linked, dependencies
+   - Status: READY / NEEDS WORK
+
+4. **For Sprint N+2 (PLAN):**
+   - Fetch all stories
+   - Calculate: % with AC written, % with estimates, design start date
+   - Status: ON TRACK / BEHIND SCHEDULE
+
+5. **Identify risks across all three:**
+   - Which sprint is lagging?
+   - Any cross-sprint blockers?
+   - Design bottleneck?
+   - Capacity risk?
+
+### Output format
+
 ```
-/pm:pipeline-audit
-```
-
-## What you get back
-- **Sprint N (Execute):** Burndown %, blockers, QA rate
-- **Sprint N+1 (Plan):** Backlog %, design %, ready date
-- **Sprint N+2 (Spec):** Spec status, backlog draft %, design start date
-- **Risks:** Which phase is lagging? What to fix?
-
-## When to use
-- **End of week:** Full pipeline health snapshot
-- **If you feel behind:** Pinpoint where
-- **Before stakeholder call:** Data to share
-
-## Requirements
-- Three sprints active in Shortcut
-- Stories tagged with sprint N, N+1, N+2
-- Backlog states consistent (Ready, In Progress, In QA, Done)
-
-## Example
-```
-/pm:pipeline-audit
-
-Pipeline Health (Sprints 12 | 13 | 14):
+Pipeline Health (Sprints [N] | [N+1] | [N+2]):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Sprint 12 (EXECUTE)    | 60% done | 1 blocker | QA: 12% ⚠️
-Sprint 13 (READY)      | 100% backlog ✅ | Designs ✅ | Kick off Mon
-Sprint 14 (PLAN)       | AC: 50% | Design: 20% | On track
+Sprint [N] (EXECUTE)     | [%] done | [X] blockers | QA: [%] [status]
+Sprint [N+1] (READY)     | Backlog [%] ✅ | Design [%] ✅ | [ready/blocked]
+Sprint [N+2] (PLAN)      | AC [%] | Design [%] | [on track/behind]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⚠️  Sprint 12 QA spiking — review AC clarity
-✅ Sprint 13 ready
-✅ Sprint 14 pacing well
+[Risk summary]
+- [Sprint N issue if any]
+- [Sprint N+1 issue if any]
+- [Sprint N+2 issue if any]
 ```
+
+### Implementation notes
+
+- Use same methodologies as individual skills (pm-sprint-health, pm-next-sprint-ready, etc.)
+- Report only ONE headline metric per sprint (burndown for N, readiness for N+1, planning for N+2)
+- Flag if any sprint is red
+- 3-sprint view shows bottlenecks: if N+1 not ready but N+2 planning on time, design is likely bottleneck
