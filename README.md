@@ -4,11 +4,11 @@ Claude Code skills to manage the three-sprint pipeline (N | N+1 | N+2).
 
 ## Skills Included
 
-- **`/pm:sprint-health`** — Is Sprint N on track? (burndown, blockers, QA rate)
-- **`/pm:next-sprint-ready`** — Is Sprint N+1 ready to kick off? (backlog ✅, designs ✅, capacity ✅)
-- **`/pm:pipeline-audit`** — Full health check (all three sprints at once)
-- **`/pm:mid-sprint-check`** — Wednesday ritual (burndown analysis + re-scope decision)
-- **`/pm:daily-standup`** — What's my PM task today? (with checklist + time)
+- **`/pm-sprint-health 77794`** — Is Sprint N on track? (burndown, blockers, QA rate)
+- **`/pm-next-sprint-ready`** — Is Sprint N+1 ready to kick off? (backlog ✅, designs ✅, capacity ✅)
+- **`/pm-pipeline-audit`** — Full health check (all three sprints at once)
+- **`/pm-mid-sprint-check`** — Wednesday ritual (burndown analysis + re-scope decision)
+- **`/pm-daily-standup`** — What's my PM task today? (with checklist + time)
 
 ## Installation
 
