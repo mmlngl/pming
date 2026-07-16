@@ -1,6 +1,7 @@
-# /pm:sprint-health
-
-**Audit current sprint (N) health in real-time.**
+---
+name: pm-sprint-health
+description: Audits current sprint health by analyzing burndown, blockers, QA rejection rate, and support burden. Use when checking sprint progress, during mid-sprint checkpoints, or to identify re-scope decisions.
+---
 
 ## What it does
 Checks Sprint N burndown, identifies blockers, calculates QA rejection rate, flags velocity concerns. Answers: "Am I on track?"

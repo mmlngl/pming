@@ -1,6 +1,7 @@
-# /pm:pipeline-audit
-
-**Full health check of all three sprints (N | N+1 | N+2) at once.**
+---
+name: pm-pipeline-audit
+description: Provides full health check of all three concurrent sprints at once, showing phase, completion, blockers, and risks. Use end-of-week to see full pipeline health or when you feel behind to pinpoint where things broke.
+---
 
 ## What it does
 Scans Shortcut for all three concurrent sprints. Shows phase, completion, blockers, risks. Answers: "Is my entire pipeline healthy?"

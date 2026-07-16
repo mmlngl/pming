@@ -1,6 +1,7 @@
-# /pm:mid-sprint-check
-
-**Run Wednesday ritual: analyze burndown, decide re-scope.**
+---
+name: pm-mid-sprint-check
+description: Runs the mid-sprint ritual by analyzing burndown, identifying stuck stories, forecasting completion, and recommending re-scope decisions. Use Wednesday morning (Day 3) of sprint to see if team will hit goal or need to adjust scope.
+---
 
 ## What it does
 Pulls burndown data, compares actual vs. ideal, identifies stuck stories, calculates if team will hit sprint goal. Recommends: pull stories, push to next sprint, or stay course?

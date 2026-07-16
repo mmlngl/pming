@@ -1,6 +1,7 @@
-# /pm:next-sprint-ready
-
-**Verify Sprint N+1 is ready to kick off Monday.**
+---
+name: pm-next-sprint-ready
+description: Verifies that the next sprint is ready to kick off by checking backlog completion, design finalization, team capacity, and dependencies. Use on Thursday or Friday before sprint kickoff to ensure Monday launch won't be delayed.
+---
 
 ## What it does
 Checks if backlog is 100% finalized, all designs linked, team capacity booked, dependencies resolved. Answers: "Can we start Monday?"

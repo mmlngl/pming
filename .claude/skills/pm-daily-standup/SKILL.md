@@ -1,6 +1,7 @@
-# /pm:daily-standup
-
-**Generate today's PM tasks from the sprint calendar.**
+---
+name: pm-daily-standup
+description: Generates today's PM tasks for all three concurrent sprints (N|N+1|N+2) with time estimates and checklists. Use each morning to see what to work on today, or after meetings to find your place in the sprint cycle.
+---
 
 ## What it does
 Tells you: what day is it? What should you do today for N | N+1 | N+2? With time estimates + checklist.
